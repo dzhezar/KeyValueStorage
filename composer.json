@@ -1,0 +1,20 @@
+{
+    "name": "dzhezar-bazar/hw_3",
+    "description": "HomeWork3",
+    "type": "project",
+    "require": {
+        "symfony/yaml": "4.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dzhezar Kadyrov",
+            "email": "dzhezik@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":""
+        }
+    }
+}
