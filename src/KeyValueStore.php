@@ -5,48 +5,42 @@
  * Date: 02.12.18
  * Time: 19:20
  */
-namespace App\src;
+namespace Dzhezar\Store;
 
-class KeyValueStore implements KeyValueStoreInterface
+
+abstract class KeyValueStore implements KeyValueStoreInterface
 {
-    private $variables = array();
+    private $storage = [];
 
-    public function set($key, $value) : void
+    public function set($key, $value)
     {
-        $this->variables[$key] = $value;
+        $this->storage[$key] = $value;
     }
 
 
     public function get($key, $default = null)
     {
-        if(isset($this->variables[$key])) {
-            return $this->variables[$key];
+        if(isset($this->storage[$key])) {
+            return $this->storage[$key];
         }
-        else
-            return $default;
+        return $default;
     }
 
-    public function has($key): bool
+    public function has($key) : bool
     {
-        if(isset($this->variables[$key])) {
+        return isset($this->storage[$key]);
+    }
+    public function clear()
+    {
+        $this->storage = null;
+    }
+
+    public function remove($key)
+    {
+        if(isset($this->storage[$key])) {
+            unset($this->storage[$key]);
             return true;
         }
-        else
-            return false;
-    }
-
-    public function clear() : void
-    {
-        $this->variables = null;
-    }
-
-    public function remove($key) : bool
-    {
-        if(isset($this->variables[$key])) {
-            unset($this->variables[$key]);
-            return true;
-        }
-        else
-            return false;
+        return false;
     }
 }

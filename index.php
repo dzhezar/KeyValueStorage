@@ -7,9 +7,8 @@
  */
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/console_helper.php';
-use App\src\KeyValueStore;
-use App\src\KeyValueStoreJSon;
-use App\src\KeyValueStoreYAML;
+
+use Dzhezar\Store\{KeyValueStore, KeyValueStoreJSon, KeyValueStoreYAML};
 
 
 $list1 = new KeyValueStore();
