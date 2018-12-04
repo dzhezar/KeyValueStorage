@@ -11,6 +11,7 @@ namespace Dzhezar\Store;
 
 abstract class KeyValueStoreSerializeBase implements KeyValueStoreInterface
 {
+    const file = 'abstract';
     abstract public function set($key, $value);
     abstract public function remove($key);
     abstract protected function getData();

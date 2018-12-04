@@ -8,7 +8,7 @@
 namespace Dzhezar\Store;
 
 
-abstract class KeyValueStore implements KeyValueStoreInterface
+class KeyValueStore implements KeyValueStoreInterface
 {
     private $storage = [];
 

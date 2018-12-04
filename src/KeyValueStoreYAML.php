@@ -12,7 +12,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class KeyValueStoreYAML extends KeyValueStoreSerializeBase
 {
-    private const file = 'data/storage.yaml';
+    const file = 'data/storage.yaml';
 
     protected function getData(){
         if(!file_exists(self::file)) {

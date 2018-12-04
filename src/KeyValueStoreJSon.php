@@ -11,7 +11,7 @@ namespace Dzhezar\Store;
 
 class KeyValueStoreJSon extends KeyValueStoreSerializeBase {
 
-private const file = 'data/storage.json';
+const file = 'data/storage.json';
 
     protected function getData(){
         if(!file_exists(self::file)) {
